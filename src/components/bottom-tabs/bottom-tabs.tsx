@@ -16,7 +16,7 @@ interface TabBarIconProps {
 const TabBarIcon: React.FC<TabBarIconProps> = ({tabBarIcon, isFocused}) => (
   <Ionicons
     name={tabBarIcon}
-    size={22}
+    size={23}
     color={isFocused ? '#9e0fb5' : Colors.primary.brand}
     style={[styles.icon, isFocused ? styles.iconActive : null]}
   />
@@ -40,7 +40,7 @@ function BottomTabs(): JSX.Element {
       screenOptions={() => ({
         tabBarLabelStyle: {
           fontSize: 12,
-          marginBottom: 4,
+          marginBottom: 3,
         },
         tabBarStyle: {
           display: 'flex',
