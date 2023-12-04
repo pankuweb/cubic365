@@ -4,6 +4,9 @@ import DashboardScreen from '../screens/dashboard/dashboard-screen';
 import HomeScreen from '../screens/home/home-screen';
 import NoticesScreen from '../screens/notices/notices-screen';
 import ProfileScreen from '../screens/profile/profile-screen';
+import AboutScreen from '../screens/about/about-screen';
+import HelpScreen from '../screens/help/help-screen';
+import ReportDetails from '../screens/report-detail/report-detail';
 
 export const routes = [
   {
@@ -41,5 +44,23 @@ export const routes = [
     title: 'ProfileScreen',
     headerShown: true,
     component: ProfileScreen,
+  },
+  {
+    name: 'About',
+    title: 'AboutScreen',
+    headerShown: true,
+    component: AboutScreen,
+  },
+  {
+    name: 'Help',
+    title: 'HelpScreen',
+    headerShown: true,
+    component: HelpScreen,
+  },
+  {
+    name: 'Details',
+    title: 'ReportDetails',
+    headerShown: true,
+    component: ReportDetails,
   },
 ];
