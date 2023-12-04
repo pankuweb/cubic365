@@ -9,14 +9,14 @@ export const tabs = [
     tabBarIcon: 'home-outline',
     headerShown: false,
     name: 'Home',
-    component: HomeScreen,
+    component: AuthScreen,
   },
   {
     tabBarLabel: 'Notices',
     tabBarIcon: 'notifications-outline',
-    headerShown: 'Notices',
+    headerShown: false,
     name: 'Category',
-    component: NoticesScreen,
+    component: AuthScreen,
   },
   {
     tabBarLabel: 'New Request',
@@ -30,7 +30,7 @@ export const tabs = [
     tabBarIcon: 'list-outline',
     headerShown: false,
     name: 'Requests',
-    component: HomeScreen,
+    component: AuthScreen,
   },
   {
     tabBarLabel: 'Profile',

@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 30,
     fontSize: 14,
-    color: '#9e0fb5',
+    color: '#0047ab',
   },
   tabContainer: {
     flexDirection: 'row',
