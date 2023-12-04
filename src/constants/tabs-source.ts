@@ -1,6 +1,7 @@
 import AuthScreen from '../screens/auth/auth';
 import HomeScreen from '../screens/home/home-screen';
 import NoticesScreen from '../screens/notices/notices-screen';
+import ProfileScreen from '../screens/profile/profile-screen';
 
 export const tabs = [
   {
@@ -13,7 +14,7 @@ export const tabs = [
   {
     tabBarLabel: 'Notices',
     tabBarIcon: 'notifications-outline',
-    headerShown: false,
+    headerShown: 'Notices',
     name: 'Category',
     component: NoticesScreen,
   },
@@ -22,20 +23,20 @@ export const tabs = [
     tabBarIcon: 'add-circle-outline',
     headerShown: false,
     name: 'Search',
-    component: HomeScreen,
+    component: AuthScreen,
   },
   {
     tabBarLabel: 'Requests',
     tabBarIcon: 'list-outline',
     headerShown: false,
-    name: 'Cart',
+    name: 'Requests',
     component: HomeScreen,
   },
   {
     tabBarLabel: 'Profile',
     tabBarIcon: 'person-circle-outline',
-    headerShown: false,
+    headerShown: true,
     name: 'Profile',
-    component: AuthScreen,
+    component: ProfileScreen,
   },
 ];

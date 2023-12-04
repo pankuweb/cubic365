@@ -9,7 +9,7 @@ function AuthScreen(): JSX.Element {
     <View style={styles.container}>
       <Image source={ImageSource.logo} style={styles.image} />
 
-      <Text style={styles.title}>Welcome to Cubic365</Text>
+      <Text style={styles.title}>Welcome to Civic365</Text>
       <Text style={styles.description}>
         Submit issues, see them get fixed, connect with your neighbors. The
         answer for what you can do to improve your community.

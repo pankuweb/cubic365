@@ -55,9 +55,15 @@ function BottomTabs(): JSX.Element {
       {tabs.map(tab => (
         <Tab.Screen
           key={tab.name}
-          options={() => ({
+          options={isFocused => ({
             headerShown: tab.headerShown,
             tabBarLabel: tab.tabBarLabel,
+            headerStyle: {
+              backgroundColor: isFocused ? '#9e0fb5' : 'white', // Change header background color dynamically
+            },
+            headerTitleStyle: {
+              color: '#fff',
+            },
             tabBarIcon: ({focused}) => (
               <TabBarIcon tabBarIcon={tab.tabBarIcon} isFocused={focused} />
             ),
