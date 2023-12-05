@@ -8,6 +8,8 @@ export const styles = StyleSheet.create({
     backgroundColor: '#9e0fb5',
     padding: 14,
     marginBottom: 10,
+    // borderBottomWidth: 2,
+    // borderBottomColor: '#9e0fb5',
   },
   headerText: {
     fontSize: 20,
@@ -106,5 +108,38 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  imagePickerButton: {
+    backgroundColor: '#eee',
+    padding: 2,
+    width: 100,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginTop: 0,
+    borderWidth: 1,
+    borderColor: '#000',
+  },
+  imagePickerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  avatarContainer: {
+    flex: 1,
+    marginLeft: 10,
+    justifyContent: 'center',
+  },
+  avatarImage: {
+    width: 40, // Adjust the width as needed
+    height: 40, // Adjust the height as needed
+    borderRadius: 25, // Adjust the border radius as needed for a circular shape
+  },
+  imagePickerButtonText: {
+    color: '#000',
+    fontSize: 14,
+  },
+  path: {
+    marginLeft: 5,
+    color: '#bababa',
+    fontSize: 14,
   },
 });

@@ -5,14 +5,17 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Image,
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
+import ImagePicker from 'react-native-image-crop-picker';
 import {styles} from './style';
 
 function ManageAccountScreen(): JSX.Element {
   const [displayName, setDisplayName] = useState('');
   const [timezone, setTimezone] = useState('UTC');
   const [language, setLanguage] = useState('en');
+  const [avatar, setAvatar] = useState(null); // State to store the selected image URI
 
   const timezones = ['UTC', 'GMT', 'EST', 'PST'];
   const languages = ['English', 'Spanish', 'French'];
@@ -23,6 +26,20 @@ function ManageAccountScreen(): JSX.Element {
 
   const handleDeleteAccount = () => {
     console.log('Account deleted!');
+  };
+
+  const handleImagePicker = async () => {
+    try {
+      await ImagePicker.openCamera({
+        width: 300,
+        height: 400,
+        cropping: true,
+      }).then(image => {
+        setAvatar(image.path);
+      });
+    } catch (error) {
+      console.log('ImagePicker Error: ', error);
+    }
   };
 
   return (
@@ -57,6 +74,23 @@ function ManageAccountScreen(): JSX.Element {
           <Text style={styles.label}>
             Manage password on Civic365 Platform: Community
           </Text>
+        </View>
+        <View style={styles.inputContainer}>
+          <Text style={styles.label}>Upload an Avatar</Text>
+          <View style={styles.imagePickerContainer}>
+            <TouchableOpacity
+              style={styles.imagePickerButton}
+              onPress={handleImagePicker}>
+              <Text style={styles.imagePickerButtonText}>Choose file</Text>
+            </TouchableOpacity>
+            {avatar ? (
+              <View style={styles.avatarContainer}>
+                <Image source={{uri: avatar}} style={styles.avatarImage} />
+              </View>
+            ) : (
+              <Text style={styles.path}>No file chosen</Text>
+            )}
+          </View>
         </View>
 
         <View style={styles.inputContainer}>
