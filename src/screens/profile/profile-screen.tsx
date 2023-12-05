@@ -51,7 +51,12 @@ const ProfileScreen = () => {
         <Text style={styles.profileName}>John Doe</Text>
         <Text style={styles.profileEmail}>john.doe@gmail.com</Text>
 
-        <Text style={styles.manageAccountText}>Manage Account</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Manage Account');
+          }}>
+          <Text style={styles.manageAccountText}>Manage Account</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.tabContainer}>

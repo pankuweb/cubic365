@@ -7,6 +7,7 @@ import ProfileScreen from '../screens/profile/profile-screen';
 import AboutScreen from '../screens/about/about-screen';
 import HelpScreen from '../screens/help/help-screen';
 import ReportDetails from '../screens/report-detail/report-detail';
+import ManageAccountScreen from '../screens/profile/manage-account/manage-account';
 
 export const routes = [
   {
@@ -62,5 +63,11 @@ export const routes = [
     title: 'ReportDetails',
     headerShown: true,
     component: ReportDetails,
+  },
+  {
+    name: 'Manage Account',
+    title: 'ManageAccountScreen',
+    headerShown: true,
+    component: ManageAccountScreen,
   },
 ];
