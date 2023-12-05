@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 30,
     backgroundColor: '#dae2ee',
+    borderStyle: 'dashed',
   },
   noticeTag: {
     fontWeight: 'bold',
@@ -36,7 +37,7 @@ export const styles = StyleSheet.create({
     lineHeight: 20,
   },
   inputContainer: {
-    marginBottom: 10,
+    marginBottom: 16,
   },
   label: {
     marginBottom: 5,
@@ -50,6 +51,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     height: 40,
     fontSize: 16,
+    backgroundColor: '#eee',
   },
   pickerContainer: {
     borderWidth: 1,
@@ -62,6 +64,7 @@ export const styles = StyleSheet.create({
   picker: {
     height: 40,
     fontSize: 12,
+    color: '#8f8f8f',
   },
   pickerItem: {
     fontSize: 12,
@@ -139,7 +142,7 @@ export const styles = StyleSheet.create({
   },
   path: {
     marginLeft: 5,
-    color: '#bababa',
+    color: '#8f8f8f',
     fontSize: 14,
   },
 });
