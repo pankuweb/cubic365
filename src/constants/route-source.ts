@@ -37,7 +37,7 @@ export const routes = [
   {
     name: 'NoticesScreen',
     title: 'NoticesScreen',
-    headerShown: false,
+    headerShown: true,
     component: NoticesScreen,
   },
   {

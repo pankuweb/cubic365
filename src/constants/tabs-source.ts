@@ -14,9 +14,9 @@ export const tabs = [
   {
     tabBarLabel: 'Notices',
     tabBarIcon: 'notifications-outline',
-    headerShown: false,
-    name: 'Category',
-    component: AuthScreen,
+    headerShown: true,
+    name: 'Notices',
+    component: NoticesScreen,
   },
   {
     tabBarLabel: 'New Request',
