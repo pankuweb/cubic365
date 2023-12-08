@@ -74,7 +74,7 @@ export const routes = [
   {
     name: 'Request Location',
     title: 'RequestLocationScreen',
-    headerShown: true,
+    headerShown: false,
     component: RequestLocationScreen,
   },
 ];

@@ -1,17 +1,13 @@
-/* eslint no-use-before-define: 0 */
 import React, {useState, useEffect, useRef} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  PermissionsAndroid,
-  StyleSheet,
-} from 'react-native';
+import {View, PermissionsAndroid, StyleSheet} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
+import {useNavigation} from '@react-navigation/native';
 
 const RequestLocationScreen = () => {
+  const navigation = useNavigation();
+
   const [currentLocation, setCurrentLocation] = useState({});
   const [markerCoordinate, setMarkerCoordinate] = useState({});
   const mapRef = useRef(null);
@@ -65,7 +61,6 @@ const RequestLocationScreen = () => {
   };
 
   const handleRegionChange = region => {
-    // Update the marker's latitude and longitude based on the map's center
     setMarkerCoordinate({
       latitude: region.latitude,
       longitude: region.longitude,
@@ -73,31 +68,7 @@ const RequestLocationScreen = () => {
   };
 
   return (
-    <View style={{flex: 1}}>
-      <MapView
-        ref={mapRef}
-        style={{flex: 12}}
-        initialRegion={
-          Object.keys(currentLocation).length !== 0
-            ? currentLocation
-            : undefined
-        }
-        showsUserLocation={true}
-        followsUserLocation={true}
-        showsMyLocationButton={false}
-        onRegionChangeComplete={handleRegionChange}
-        pointerEvents="none"
-        scrollEnabled={false}
-        zoomEnabled={false}>
-        {markerCoordinate.latitude && markerCoordinate.longitude && (
-          <Marker
-            coordinate={markerCoordinate}
-            title="Selected Location"
-            description="You selected this place"
-            pinColor="red"
-          />
-        )}
-      </MapView>
+    <View style={{flex: 12}}>
       <GooglePlacesAutocomplete
         placeholder="Search"
         onPress={(data, details) => {
@@ -121,66 +92,55 @@ const RequestLocationScreen = () => {
           language: 'en',
           components: 'country:ind',
         }}
-        styles={styles.autoCompleteContainer}
+        styles={{
+          container: {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 1,
+          },
+          listView: {
+            position: 'absolute',
+            top: 50, // Adjust this value based on your design
+            backgroundColor: 'transparent', // Make the background transparent
+            zIndex: 2,
+          },
+        }}
         fetchDetails={true}
         currentLocation={true}
         currentLocationLabel="Current location"
         listViewDisplayed="auto"
       />
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 36,
-          left: 20,
-          right: 20,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'white',
-          padding: 10,
-          borderRadius: 8,
-          elevation: 5,
-        }}
-        pointerEvents="auto">
-        <Text
-          style={{
-            fontWeight: 500,
-            fontSize: 18,
-            textAlign: 'center',
-            paddingHorizontal: 20,
-            marginBottom: 10,
-          }}>
-          Look like your city hasn't posted any local content on Civic356.
-        </Text>
-        <TouchableOpacity
-          style={{
-            padding: 10,
-          }}
-          onPress={() => {
-            console.log('Link pressed');
-          }}>
-          <Text
-            style={{
-              color: '#9e0fb5',
-              textAlign: 'center',
-              fontSize: 18,
-            }}>
-            Report an issue to your community{' '}
-            {currentLocation.latitude ? currentLocation.latitude : 'asdf'}
-          </Text>
-        </TouchableOpacity>
-      </View>
+
+      <MapView
+        ref={mapRef}
+        style={{flex: 1}}
+        initialRegion={
+          Object.keys(currentLocation).length !== 0
+            ? currentLocation
+            : undefined
+        }
+        showsUserLocation={true}
+        followsUserLocation={true}
+        showsMyLocationButton={false}
+        onRegionChangeComplete={handleRegionChange}
+        pointerEvents="none"
+        scrollEnabled={true}
+        zoomEnabled={true}>
+        {markerCoordinate.latitude && markerCoordinate.longitude && (
+          <Marker
+            coordinate={markerCoordinate}
+            title="Selected Location"
+            description="You selected this place"
+            pinColor="red"
+          />
+        )}
+      </MapView>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  autoCompleteContainer: {
-    position: 'absolute',
-    bottom: 100,
-    left: 0,
-    right: 0,
-    zIndex: 1,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default RequestLocationScreen;
