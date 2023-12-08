@@ -182,7 +182,6 @@ const HomeScreen = () => {
               fontSize: 18,
             }}>
             Report an issue to your community{' '}
-            {currentLocation.latitude ? currentLocation.latitude : 'asdf'}
           </Text>
         </TouchableOpacity>
       </View>
