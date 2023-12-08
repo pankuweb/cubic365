@@ -5,6 +5,9 @@
 <uses-permission android:name="android.permission.CAMERA"/>
 <uses-feature android:name="android.hardware.camera" android:required="false" />
 <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -12,6 +15,9 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <meta-data
+     android:name="com.google.android.geo.API_KEY"
+     android:value="AIzaSyDfus5d7aEZadC-9tAS9qbHSmQCiwKeaeQ"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

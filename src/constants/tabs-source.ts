@@ -9,7 +9,7 @@ export const tabs = [
     tabBarIcon: 'home-outline',
     headerShown: false,
     name: 'Home',
-    component: AuthScreen,
+    component: HomeScreen,
   },
   {
     tabBarLabel: 'Notices',
