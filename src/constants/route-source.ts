@@ -8,6 +8,7 @@ import AboutScreen from '../screens/about/about-screen';
 import HelpScreen from '../screens/help/help-screen';
 import ReportDetails from '../screens/report-detail/report-detail';
 import ManageAccountScreen from '../screens/profile/manage-account/manage-account';
+import RequestLocationScreen from '../screens/request/request-location';
 
 export const routes = [
   {
@@ -69,5 +70,11 @@ export const routes = [
     title: 'ManageAccountScreen',
     headerShown: true,
     component: ManageAccountScreen,
+  },
+  {
+    name: 'Request Location',
+    title: 'RequestLocationScreen',
+    headerShown: true,
+    component: RequestLocationScreen,
   },
 ];

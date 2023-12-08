@@ -9,8 +9,11 @@ import {
 import MapView, {Marker} from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+
   const [currentLocation, setCurrentLocation] = useState({});
   const [markerCoordinate, setMarkerCoordinate] = useState({});
   const mapRef = useRef(null);
@@ -170,7 +173,7 @@ const HomeScreen = () => {
             padding: 10,
           }}
           onPress={() => {
-            console.log('Link pressed');
+            navigation.navigate('Request Location');
           }}>
           <Text
             style={{
